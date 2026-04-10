@@ -24,11 +24,11 @@ public class EventoController {
     public List<Evento> mostrarEventos(){
         return es.mostrarEventos();
     }
-    @GetMapping("/eventos/id/{id}")
+    @GetMapping("/id/{id}")
     public Evento buscarId(@PathVariable int id){
         return es.buscarId(id);
     }
-    @GetMapping("/eventos/nombre/{nombre}")
+    @GetMapping("/nombre/{nombre}")
     public Evento buscarNombre(@PathVariable String nombre){
         return es.buscarNombre(nombre);
     }
