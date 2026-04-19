@@ -52,11 +52,12 @@ public class EventoRepository {
         agendaEventos.set(p, e1);
         return e1;
     }
-    public void eliminarEvento(int id){
+    public boolean eliminarEvento(int id){
         Evento e = buscarId(id);
         if (e != null){
-            agendaEventos.remove(e);
+            return agendaEventos.remove(e);
         }
+        return false;
     }
     public EventoRepository(){
         agendaEventos.add(new Evento(1, "Concierto de Rock", "Música", "2023-10-15", "Estadio Nacional", "5000"));

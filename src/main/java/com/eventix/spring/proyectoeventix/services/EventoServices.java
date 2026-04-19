@@ -28,8 +28,8 @@ public class EventoServices {
     public Evento actualizarEvento(Evento e){
         return er.actualizarEvento(e);
     }
-    public void eliminarEvento(int id){
-        er.eliminarEvento(id);
+    public boolean eliminarEvento(int id){
+        return er.eliminarEvento(id);
     }
     
 }

@@ -2,7 +2,9 @@ package com.eventix.spring.proyectoeventix.controller;
 
 import java.util.List;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,9 +42,12 @@ public class EventoController {
     public Evento actualizarEvento(@PathVariable int id, @RequestBody Evento e){
         return es.actualizarEvento(e);
     }
-    @DeleteMapping("/{id}")
-    public void eliminarEvento(@PathVariable int id){
-        es.eliminarEvento(id);
-        System.out.println("Evento eliminado");
+    @DeleteMapping("/{id}")//Este metodo devolverá un objeto del tipo response entity
+    public ResponseEntity<Boolean> eliminarEvento(@PathVariable int id){
+        if (es.eliminarEvento(id)){
+            return ResponseEntity.noContent().build();
+        }else{
+            return ResponseEntity.notFound().build();
+        }
     }
 }
