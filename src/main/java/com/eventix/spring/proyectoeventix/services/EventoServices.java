@@ -12,12 +12,12 @@ import com.eventix.spring.proyectoeventix.repository.EventoRepository;
 public class EventoServices {
     @Autowired
     private EventoRepository er;
-    
+
     public List<Evento> mostrarEventos(){
         return er.mostrarEventos();
     }
     public Evento buscarId(int id){
-        return er.buscarId(id);
+            return er.buscarId(id);
     }
     public Evento buscarNombre(String nombre){
         return er.buscarNombre(nombre);
