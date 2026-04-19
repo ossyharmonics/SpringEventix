@@ -1,7 +1,9 @@
 package com.eventix.spring.proyectoeventix.model;
 
-import org.jspecify.annotations.NonNull;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,19 +15,19 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Evento {
-    @NonNull
+    @NotNull(message = "El id no puede ser nulo")
     int id;
 
-    @NonBlank
+    @NotBlank
     String nombre;
 
     String tipoEvento;
 
-    @NonNull
+    @NotNull
     String fechaEvento;
 
-    @NonNull
+    @NotNull
     String ubicacion;
-
-    String capacidad;
+    @Min(0)
+    int capacidad;
 }
