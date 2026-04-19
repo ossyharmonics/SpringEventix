@@ -60,9 +60,9 @@ public class EventoRepository {
         return false;
     }
     public EventoRepository(){
-        agendaEventos.add(new Evento(1, "Concierto de Rock", "Música", "2023-10-15", "Estadio Nacional", "5000"));
-        agendaEventos.add(new Evento(2, "Feria de Tecnología", "Tecnología", "2023-11-20", "Centro de Convenciones", "2000"));
-        agendaEventos.add(new Evento(3, "Festival de Cine", "Cine", "2023-12-05", "Cineplex", "1000"));
+        agendaEventos.add(new Evento(1, "Concierto de Rock", "Música", "2023-10-15", "Estadio Nacional", 5000));
+        agendaEventos.add(new Evento(2, "Feria de Tecnología", "Tecnología", "2023-11-20", "Centro de Convenciones", 2000));
+        agendaEventos.add(new Evento(3, "Festival de Cine", "Cine", "2023-12-05", "Cineplex", 1000));
     }
 
 
